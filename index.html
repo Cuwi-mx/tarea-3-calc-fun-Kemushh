@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        #titulo {
+            position: absolute;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!--Título-->
+    <h1 id="titulo">Hola soy un título</h1>
+    <p id="parrafo">Hola soy un parrafo</p>
+
+    <!--Resultado-->
+    <p id="resultado"></p>
+
+    <!--Espacios para poner valores-->
+    <label for="numero1">Número 1 </label>
+    <input id="numero1" type="number"/>
+    <br/>
+
+    <label for="numero2">Número 2 </label>
+    <input id="numero2"  type="number"/>
+    <br/>
+
+    <!--Botones de operaciones-->
+    <button onclick="sumar()">sumar</button>
+    <button onclick="restar()">restar</button>
+    <button onclick="multiplicar()">multiplicar</button>
+    <button onclick="dividir()">dividir</button>
+
+    <br/>
+
+
+
+    <script>
+
+        //Declarar variables
+
+        let titulo;
+        let parrafo;
+        let input_num1;
+        let input_num2;
+        let p_resultado;
+        var numero1 = 0;
+        var numero2 = 0;
+
+        //Cambiamos el nombre al titulo y descripción
+        titulo = document.getElementById("titulo");
+        titulo.innerText = "Calculadora";
+
+        parrafo = document.getElementById("parrafo");
+        parrafo.innerText = "Esta es una calculadora";
+
+
+        //Sumar
+        function sumar(){
+            //Llamar a las etiquetas
+            input_num1 = document.getElementById("numero1");
+            input_num2 = document.getElementById("numero2");
+
+            numero1 = input_num1.value; //Valor de la etiqueta 1
+            numero1 = parseInt(numero1);
+
+            numero2 = input_num2.value; //Valor de la etiqueta 2
+            numero2 = parseInt(numero2);
+
+            let resultado = numero1 + numero2; //Calcular resultado
+
+            p_resultado = document.getElementById("resultado"); //Llamar etiqueta resultado
+            p_resultado.innerText = resultado; //Mostrar resultado
+        }
+        function restar(){
+            input_num1 = document.getElementById('numero1');
+            input_num2 = document.getElementById("numero2");
+
+            numero1 = input_num1.value;
+            numero1 = parseInt(numero1);
+
+            numero2 = input_num2.value;
+            numero2 = parseInt(numero2);
+
+            let resultado = numero1 - numero2;
+
+            p_resultado = document.getElementById("resultado");
+            p_resultado.innerText = resultado;
+        }
+        function multiplicar(){
+            input_num1 = document.getElementById('numero1');
+            input_num2 = document.getElementById("numero2");
+
+            numero1 = input_num1.value;
+            numero1 = parseInt(numero1);
+
+            numero2 = input_num2.value;
+            numero2 = parseInt(numero2);
+
+            let resultado = numero1 * numero2;
+
+            p_resultado = document.getElementById("resultado");
+            p_resultado.innerText = resultado;
+        }
+        function dividir(){
+            input_num1 = document.getElementById('numero1');
+            input_num2 = document.getElementById("numero2");
+
+            numero1 = input_num1.value;
+            numero1 = parseInt(numero1);
+
+            numero2 = input_num2.value;
+            numero2 = parseInt(numero2);
+
+            let resultado = numero1 / numero2;
+
+            p_resultado = document.getElementById("resultado");
+            p_resultado.innerText = resultado;
+        }
+    </script>
+</body>
+</html>
